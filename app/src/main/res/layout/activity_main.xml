@@ -68,6 +68,7 @@
         android:textStyle="bold" />
 
     <View
+        android:elevation="6dp"
         android:layout_width="232dp"
         android:layout_height="4dp"
         android:layout_below="@id/text_random_phrases"

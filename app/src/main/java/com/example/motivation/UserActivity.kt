@@ -6,21 +6,17 @@ import android.view.View
 import android.widget.Toast
 import com.example.motivation.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class UserActivity : AppCompatActivity(), View.OnClickListener {
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Hide support bar
-        supportActionBar?.hide()
-
-        binding.buttonNewPhrase.setOnClickListener(this)
     }
 
-    override fun onClick(view: View) {
-        Toast.makeText(this, "Teste", Toast.LENGTH_LONG).show()
+    override fun onClick(v: View?) {
+        Toast.makeText(this, "Test", Toast.LENGTH_LONG).show()
     }
 }
