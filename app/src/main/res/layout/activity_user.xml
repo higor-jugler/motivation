@@ -19,7 +19,7 @@
         android:textColor="@color/white" />
 
     <EditText
-        android:textSize="22sp"
+        android:textColor="@color/white"
         android:id="@+id/edit_your_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +27,8 @@
         android:fontFamily="@font/cabin"
         android:gravity="center"
         android:hint="@string/edit_your_name"
-        android:textColorHint="@color/white" />
+        android:textColorHint="@color/white"
+        android:textSize="22sp" />
 
     <Button
         android:layout_marginBottom="32dp"
