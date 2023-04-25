@@ -19,22 +19,21 @@
         android:paddingBottom="16dp">
 
         <ImageView
-            android:id="@+id/ic_all_inclusive"
+            android:id="@+id/image_all_inclusive"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_all_inclusive"
-            app:tint="@color/white" />
+            android:src="@drawable/ic_all_inclusive" />
 
         <ImageView
-            android:id="@+id/ic_happy"
+            android:id="@+id/image_happy"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:layout_weight="1"
             android:src="@drawable/ic_happy" />
 
         <ImageView
-            android:id="@+id/ic_sunny"
+            android:id="@+id/image_sunny"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:layout_weight="1"
@@ -51,12 +50,11 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/cabin"
         android:text="@string/text_name_user"
-        android:textSize="16sp"
         android:textColor="@color/black"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
-        android:textColor="@color/black"
         android:id="@+id/text_random_phrases"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,17 +62,18 @@
         android:fontFamily="@font/cabin"
         android:gravity="center"
         android:text="@string/text_random_phrases"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold" />
 
     <View
-        android:elevation="6dp"
         android:layout_width="232dp"
         android:layout_height="4dp"
         android:layout_below="@id/text_random_phrases"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:background="#7E0F54" />
+        android:background="#7E0F54"
+        android:elevation="6dp" />
 
     <Button
         android:id="@+id/button_new_phrase"
