@@ -9,10 +9,15 @@ import com.example.motivation.R
 import com.example.motivation.infra.MotivationConstants
 import com.example.motivation.infra.SecurityPreferences
 import com.example.motivation.databinding.ActivityMainBinding
+import com.example.motivation.repository.Mock
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+
     private lateinit var binding: ActivityMainBinding
-    private var category = 1
+    private lateinit var securityPreferences: SecurityPreferences
+
+    private var category: Int = MotivationConstants.FILTER.ALL
+    private val mock: Mock = Mock()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +26,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         // Hide support bar
         supportActionBar?.hide()
+
+        // Init variable
+        securityPreferences = SecurityPreferences(this)
 
         // Init
         handleFilter(R.id.image_all_inclusive)
@@ -43,6 +51,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         )
         if (id in listId) {
             handleFilter(id)
+        } else if (id == R.id.button_new_phrase) {
+            refreshPhrase()
         }
     }
 
@@ -70,5 +80,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun handleUserName() {
         val name = SecurityPreferences(this).getString(MotivationConstants.KEY.USER_NAME)
         binding.textNameUser.text = "Olá, $name!"
+    }
+
+    private fun refreshPhrase() {
+        binding.textRandomPhrases.text = mock.getPhrases(category)
     }
 }
